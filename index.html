@@ -11,8 +11,8 @@
   
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const score = urlParams.get('score');
-    document.getElementById('feedback').textContent = `Il tuo punteggio totale è: ${score}`;
+    const totalScore = urlParams.get('totalScore');
+    document.getElementById('feedback').textContent = `Il tuo punteggio totale è: ${totalScore}`;
   </script>
 </body>
 </html>
