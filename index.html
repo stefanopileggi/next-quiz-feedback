@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback del Modulo</title>
+</head>
+<body>
+  <h1>Il tuo feedback</h1>
+  <p id="feedback">Caricamento del feedback...</p>
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = urlParams.get('score');
+    document.getElementById('feedback').textContent = `Il tuo punteggio totale è: ${score}`;
+  </script>
+</body>
+</html>
