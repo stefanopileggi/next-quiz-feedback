@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback del Quiz</title>
+</head>
+<body>
+    <div id="feedback"></div>
+    <script>
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        const feedback = getParameterByName('feedback');
+        document.getElementById('feedback').innerText = feedback ? decodeURIComponent(feedback) : 'Nessun feedback disponibile.';
+    </script>
+</body>
+</html>
+
