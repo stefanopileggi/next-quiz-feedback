@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback del Modulo</title>
+  <title>Quiz Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .score {
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <h1>PUNTEGGIO</h1>
-  <p id="feedback">Caricamento del feedback...</p>
-  
+  <h1>Il tuo punteggio</h1>
+  <p class="score" id="score"></p>
+
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const score = urlParams.get('score');
-    document.getElementById('feedback').textContent = `Il tuo punteggio totale è: ${score}`;
+    // Funzione per ottenere il parametro "score" dall'URL
+    function getScoreFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('score');
+    }
+
+    // Mostra il punteggio nella pagina
+    window.onload = function() {
+      const score = getScoreFromURL();
+      if (score) {
+        document.getElementById('score').textContent = `Il tuo punteggio è: ${score}`;
+      } else {
+        document.getElementById('score').textContent = 'Nessun punteggio disponibile.';
+      }
+    };
   </script>
 </body>
 </html>
+
